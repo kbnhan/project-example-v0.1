@@ -1,4 +1,6 @@
+example/Question.class
 example/Checkbox.class
 example/MultiChoice.class
 example/Application.class
-example/Question.class
+example/Assessment.class
+example/Services.class

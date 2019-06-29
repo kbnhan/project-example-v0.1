@@ -11,7 +11,7 @@ import com.google.gson.JsonArray;
 
 public class Services {
 
-    public Assessment jsonToAssessObj(String path) throws FileNotFoundException {
+    public static Assessment jsonToAssessObj(String path) throws FileNotFoundException {
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
         
