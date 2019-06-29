@@ -6,7 +6,7 @@ public class Checkbox extends Question {
  
     private ArrayList<String> user_answers = new ArrayList<String>();
 
-    public Checkbox(String text, String[] options, String[] anwers) {
+    public Checkbox(String text, String[] options, String[] answers) {
         this.text = text;
         this.options = options;
         this.answers = answers;
