@@ -10,15 +10,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class DisplayController {
 
-    Assessment assessment;
+    String path = "/Users/kevinnhan/Desktop/project-example-v0.1/example-v.01/src/main/java/example/assessment1.json";
+    Assessment assessment = Services.jsonToAssessObj(path);
 
-    public DisplayController(Assessment assessment) {
-        this.assessment = new Assessment(assessment.title, assessment.id);
-    }
+    MultiChoice question1 = new MultiChoice(
+        assessment.questions.get(0).text, 
+        assessment.questions.get(0).options,
+        assessment.questions.get(0).answers
+        );
 
+    Checkbox question2 = new Checkbox(
+        assessment.questions.get(1).text, 
+        assessment.questions.get(1).options, 
+        assessment.questions.get(1).answers
+        );
+
+    // URL mapping functions
     @GetMapping("/assessment1")
     public String displayQuestion (Model model) {
-
+        model.addAttribute("question1", question1);
+        model.addAttribute("question2", question2);
         return "combined";
     }
 

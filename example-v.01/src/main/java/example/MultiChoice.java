@@ -2,16 +2,16 @@ package example;
 
 public class MultiChoice extends Question{
 
-    private String answer;
     private String user_answer;
 
-    public MultiChoice(String text, String[] options, String answer) {
-        super(text, options);
-        this.answer = answer;
+    public MultiChoice(String text, String[] options, String[] answers) {
+        this.text = text;
+        this.options = options;
+        this.answers = answers;
     }
 
     public String getAnswer() {
-        return this.answer;
+        return this.answers[0];
     }
 
     public void setUserAnswer(String input) {

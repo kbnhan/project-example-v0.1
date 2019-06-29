@@ -7,9 +7,6 @@ import java.io.FileReader;
 // Gson imports
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
-
-import example.Assessment;
-
 import com.google.gson.JsonArray;
 
 public class Services {

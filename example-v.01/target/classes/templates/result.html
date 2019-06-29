@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>        
+  </head>
+
+  <body>
+    
+    <div class="container">
+      <h3><b>Result</b></h3>
+      <div class="row">
+        <h5>Question 1</h5>
+        <p th:text="'The answer is: ' + ${question1.getAnswer()}"/>
+        <p th:text="'Your answer is: ' + ${question1.getUserAnswer()}"/>
+      </div>
+      <div class="row">
+        <h5>Question 2</h5>
+        <p>The answers are:</p>
+        <ul th:each="animal: ${question2.getAnswers()}">
+            <li th:text="${animal}"></li>
+        </ul>
+        <p>Your answers are:</p>
+        <ul th:each="animal: ${question2.getUserAnswers()}">
+            <li th:text="${animal}"></li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
+</html>

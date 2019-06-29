@@ -3,12 +3,12 @@ package example;
 import java.util.ArrayList;
 
 public class Checkbox extends Question{
-
-    private String[] answers; 
+ 
     private ArrayList<String> user_answers = new ArrayList<String>();
 
-    public Checkbox(String text, String[] options, String[] answers) {
-        super(text, options);
+    public Checkbox(String text, String[] options, String[] anwers) {
+        this.text = text;
+        this.options = options;
         this.answers = answers;
     }
 

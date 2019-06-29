@@ -6,6 +6,5 @@ public class Question {
     public String text;
     public String[] options;
     public String[] answers;
-    
-    
+       
 }
