@@ -2,7 +2,7 @@ package example;
 
 import java.util.ArrayList;
 
-public class Checkbox extends Question{
+public class Checkbox extends Question {
  
     private ArrayList<String> user_answers = new ArrayList<String>();
 

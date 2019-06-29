@@ -1,4 +1,5 @@
 example/Question.class
+example/DisplayController.class
 example/Checkbox.class
 example/MultiChoice.class
 example/Application.class

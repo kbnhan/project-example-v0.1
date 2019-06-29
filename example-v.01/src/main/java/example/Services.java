@@ -1,5 +1,6 @@
 package example;
 
+import org.springframework.stereotype.Service;
 // File reading imports
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,6 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonArray;
 
+@Service 
 public class Services {
 
     public static Assessment jsonToAssessObj(String path) throws FileNotFoundException {
@@ -29,6 +31,41 @@ public class Services {
         }
 
         return assessment;
+
+    }
+
+    public static MultiChoice createMulti(String path) {
+
+        try {
+            Assessment assessment = jsonToAssessObj(path);
+            MultiChoice question = new MultiChoice(
+                assessment.questions.get(0).text, 
+                assessment.questions.get(0).options,
+                assessment.questions.get(0).answers
+                );
+            return question; 
+        } catch (FileNotFoundException e) {
+            System.err.println(e);
+        }
+
+        return null;
+    }
+
+    public static Checkbox createCheckbox(String path) {
+
+        try {
+            Assessment assessment = jsonToAssessObj(path);
+            Checkbox question = new Checkbox(
+                assessment.questions.get(1).text, 
+                assessment.questions.get(1).options, 
+                assessment.questions.get(1).answers
+                );
+            return question;
+        } catch (FileNotFoundException e) {
+            System.err.println(e);
+        }
+
+        return null;
 
     }
 
