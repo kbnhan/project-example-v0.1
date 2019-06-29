@@ -1,6 +1,6 @@
 package example;
 
-public class MultiChoice extends Question{
+public class MultiChoice extends Question { 
 
     private String user_answer;
 
