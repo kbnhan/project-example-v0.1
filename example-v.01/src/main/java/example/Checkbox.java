@@ -28,6 +28,5 @@ public class Checkbox extends Question {
     public ArrayList<String> getUserAnswers() {
         return this.user_answers;
     }
-
-    
+  
 }

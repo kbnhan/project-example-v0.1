@@ -7,12 +7,10 @@
         "options": ["Red", "Yellow", "Blue", "Green"],
         "answers": ["Blue"]
     },
-
     {
         "type": "Checkbox",
         "text": "What is your favorite animal?",
         "options": ["Cats", "Dogs", "Chinchillas"],
         "answers": ["Cats", "Dogs"]
     }
-
 ]

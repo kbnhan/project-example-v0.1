@@ -1,7 +1,6 @@
 package example;
 
 import java.io.FileNotFoundException;
-
 import javax.annotation.PostConstruct;
 // Imports for Spring MVC
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,6 @@ public class DisplayController {
     MultiChoice question1 = Services.createMulti(path);
     Checkbox question2 = Services.createCheckbox(path);
 
-    // URL mapping functions
     @GetMapping("/assessment1")
     public String displayQuestion (Model model) {
         model.addAttribute("question1", question1);
@@ -44,6 +42,5 @@ public class DisplayController {
         return "result";
         
     }
-
 
 }
