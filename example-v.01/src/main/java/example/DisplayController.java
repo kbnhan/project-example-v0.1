@@ -29,7 +29,11 @@ public class DisplayController {
     }
 
     @PostMapping("/assessment1")
-    public String formSubmit(@ModelAttribute TextInput question3) {
+    public String formSubmit(@ModelAttribute TextInput question, Model model) {
+        model.addAttribute("question1", question1);
+        model.addAttribute("question2", question2);
+        model.addAttribute("question3", question3); // Refers to question3 object, defined in class attributes
+        model.addAttribute("question", question); // Refers to question object, defined from method parameters
         return "result";
     }
 
@@ -44,7 +48,8 @@ public class DisplayController {
         
         model.addAttribute("question1", question1);
         model.addAttribute("question2", question2);
-        model.addAttribute("question3", question3);
+        model.addAttribute("question3", question3); // Both reference the same object
+        model.addAttribute("question", question3); // Both reference the same object. Might change later...
         question1.setUserAnswer(color);
         question2.clearUserAnswer();
         question2.addUserAnswer(animal1);

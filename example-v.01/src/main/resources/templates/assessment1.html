@@ -52,15 +52,13 @@
         
         <!--Question #3-->
         <div class="row">
-          <form action="@{/assessment1}" th:object="${question3}">
+          <form th:action="@{/assessment1}" th:object="${question3}" method="POST">
             <h5><b th:text="${question3.text}"/></h5>
             <div class="input-field col s4">
               <!--Used name of getter/setter instead of attribute name for field-->
               <input id="birthdate" type="text" th:field="*{UserAnswer}" class="validate"/>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
-              Submit <i class="material-icons right">send</i>
-            </button>
+            <input type="submit" value="Submit"/>
           </form>
         </div>
       </div> <!--End container-->
