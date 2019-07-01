@@ -16,9 +16,9 @@ public class DisplayController {
 
     // String path = "/Users/kevinnhan/Desktop/project-example-v0.1/example-v.01/src/main/java/example/assessment1.json"; // Personal path
     String path = "/Users/knhan/Desktop/project-example-v0.1/example-v.01/src/main/java/example/assessment1.json"; // NASA path
-    MultiChoice question1 = Services.createMulti(path);
-    Checkbox question2 = Services.createCheckbox(path);
-    TextInput question3 = Services.createTextInput(path);
+    MultiChoice question1 = Services.createMulti(path, 0);
+    Checkbox question2 = Services.createCheckbox(path, 1);
+    TextInput question3 = Services.createTextInput(path, 2);
 
     @GetMapping("/assessment1")
     public String displayQuestion (Model model) {

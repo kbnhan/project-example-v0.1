@@ -34,15 +34,15 @@ public class Services {
 
     }
 
-    // Method to create MultiChoice object. Currently hard-coded to 1st element in JSON array.
-    public static MultiChoice createMulti(String path) {
+    // Method to create MultiChoice type questions. 
+    public static MultiChoice createMulti(String path, int index) {
 
         try {
             Assessment assessment = jsonToAssessObj(path);
             MultiChoice question = new MultiChoice(
-                assessment.questions.get(0).text, 
-                assessment.questions.get(0).options,
-                assessment.questions.get(0).answers
+                assessment.questions.get(index).text, 
+                assessment.questions.get(index).options,
+                assessment.questions.get(index).answers
                 );
             return question; 
         } catch (FileNotFoundException e) {
@@ -51,15 +51,15 @@ public class Services {
         return null;
     }
 
-    // Method to create Checkbox object. Currently hard-coded to 2nd element in JSON array.
-    public static Checkbox createCheckbox(String path) {
+    // Method to create Checkbox type questions. 
+    public static Checkbox createCheckbox(String path, int index) {
 
         try {
             Assessment assessment = jsonToAssessObj(path);
             Checkbox question = new Checkbox(
-                assessment.questions.get(1).text, 
-                assessment.questions.get(1).options, 
-                assessment.questions.get(1).answers
+                assessment.questions.get(index).text, 
+                assessment.questions.get(index).options, 
+                assessment.questions.get(index).answers
                 );
             return question;
         } catch (FileNotFoundException e) {
@@ -69,14 +69,14 @@ public class Services {
 
     }
 
-    // Method to create TextInput object. Currently hard-coded to 3rd element in JSON array.
-    public static TextInput createTextInput(String path) {
+    // Method to create TextInput type questions. 
+    public static TextInput createTextInput(String path, int index) {
 
         try {
             Assessment assessment = jsonToAssessObj(path);
             TextInput question = new TextInput(
-                assessment.questions.get(2).text,
-                assessment.questions.get(2).answers
+                assessment.questions.get(index).text,
+                assessment.questions.get(index).answers
                 );
             return question;
         } catch (FileNotFoundException e) {
