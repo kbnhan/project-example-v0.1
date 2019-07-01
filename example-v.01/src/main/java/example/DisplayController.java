@@ -16,17 +16,19 @@ public class DisplayController {
     String path = "/Users/knhan/Desktop/project-example-v0.1/example-v.01/src/main/java/example/assessment1.json"; // NASA path
     MultiChoice question1 = Services.createMulti(path);
     Checkbox question2 = Services.createCheckbox(path);
+    TextInput question3 = Services.createTextInput(path);
 
     @GetMapping("/assessment1")
     public String displayQuestion (Model model) {
         model.addAttribute("question1", question1);
         model.addAttribute("question2", question2);
+        model.addAttribute("question3", question3);
         return "assessment1";
     }
 
     @RequestMapping("/result")
     public String getAnswerParam (
-        @RequestParam(name="group1", required=false) String answer1, 
+        @RequestParam(name="group1", required=false) String color, 
         @RequestParam(name="box1", required=false) String animal1,
         @RequestParam(name="box2", required=false) String animal2,
         @RequestParam(name="box3", required=false) String animal3, 
@@ -35,7 +37,8 @@ public class DisplayController {
         
         model.addAttribute("question1", question1);
         model.addAttribute("question2", question2);
-        question1.setUserAnswer(answer1);
+        model.addAttribute("question3", question3);
+        question1.setUserAnswer(color);
         question2.clearUserAnswer();
         question2.addUserAnswer(animal1);
         question2.addUserAnswer(animal2);

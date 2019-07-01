@@ -15,11 +15,13 @@
     
     <div class="container">
       <h3><b>Result</b></h3>
+
       <div class="row">
         <h5>Question 1</h5>
         <p th:text="'The answer is: ' + ${question1.getAnswer()}"/>
         <p th:text="'Your answer is: ' + ${question1.getUserAnswer()}"/>
       </div>
+
       <div class="row">
         <h5>Question 2</h5>
         <p>The answers are:</p>
@@ -31,7 +33,15 @@
             <li th:text="${animal}"></li>
         </ul>
       </div>
-    </div>
+
+      <div class="row">
+        <h5>Question 3</h5>
+        <p>The answer is:</p>
+        <p th:text="${question3.getAnswer()}"/>
+        <p>Your answer is:</p>
+        <p th:text="${question3.getUserAnswer()}"/>
+      </div>
+    </div> <!--End container-->
 
   </body>
 </html>

@@ -67,4 +67,20 @@ public class Services {
 
     }
 
+    public static TextInput createTextInput(String path) {
+
+        try {
+            Assessment assessment = jsonToAssessObj(path);
+            TextInput question = new TextInput(
+                assessment.questions.get(2).text,
+                assessment.questions.get(2).answers
+                );
+            return question;
+        } catch (FileNotFoundException e) {
+            System.err.println(e);
+        }
+        return null; 
+        
+    }
+
 }

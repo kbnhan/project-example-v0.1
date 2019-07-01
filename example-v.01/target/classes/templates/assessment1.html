@@ -49,8 +49,20 @@
               </button>
           </form>
         </div>
-        <!--End container-->
-      </div>
+        
+        <!--Question #3-->
+        <div class="row">
+          <form action="@{/result}" th:object="${question3}">
+            <h5><b th:text="${question3.text}"/></h5>
+            <div class="input-field col s4">
+              <input id="birthdate" type="text" name="input" class="validate"/>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action" value="Submit">
+              Submit <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div>
+      </div> <!--End container-->
 
   </body>
 </html>

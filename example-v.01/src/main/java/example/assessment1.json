@@ -12,5 +12,11 @@
         "text": "What is your favorite animal?",
         "options": ["Cats", "Dogs", "Chinchillas"],
         "answers": ["Cats", "Dogs"]
+    },
+    {
+        "type": "TextInput",
+        "text": "When is your birthday?",
+        "options": [],
+        "answers": ["1969-07-20"]
     }
 ]
