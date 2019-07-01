@@ -9,16 +9,16 @@ public class TextInput extends Question {
         this.answers = answers;
     }
 
-    public String getAnswer() {
-        return this.answers[0];
-    }
-
     public void setUserAnswer(String user_answer) {
         this.user_answer = user_answer;
     }
 
     public String getUserAnswer() {
         return this.user_answer;
+    }
+
+    public String getAnswer() {
+        return this.answers[0];
     }
 
 }

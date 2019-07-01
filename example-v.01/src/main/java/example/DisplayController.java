@@ -5,7 +5,9 @@ import javax.annotation.PostConstruct;
 // Imports for Spring MVC
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,6 +26,11 @@ public class DisplayController {
         model.addAttribute("question2", question2);
         model.addAttribute("question3", question3);
         return "assessment1";
+    }
+
+    @PostMapping("/assessment1")
+    public String formSubmit(@ModelAttribute TextInput question3) {
+        return "result";
     }
 
     @RequestMapping("/result")
