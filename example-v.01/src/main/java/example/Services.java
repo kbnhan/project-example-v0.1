@@ -34,6 +34,7 @@ public class Services {
 
     }
 
+    // Method to create MultiChoice object. Currently hard-coded to 1st element in JSON array.
     public static MultiChoice createMulti(String path) {
 
         try {
@@ -50,6 +51,7 @@ public class Services {
         return null;
     }
 
+    // Method to create Checkbox object. Currently hard-coded to 2nd element in JSON array.
     public static Checkbox createCheckbox(String path) {
 
         try {
@@ -67,6 +69,7 @@ public class Services {
 
     }
 
+    // Method to create TextInput object. Currently hard-coded to 3rd element in JSON array.
     public static TextInput createTextInput(String path) {
 
         try {
@@ -80,7 +83,7 @@ public class Services {
             System.err.println(e);
         }
         return null; 
-        
+
     }
 
 }
